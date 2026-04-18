@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fund Flow Scanner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0d0f14;
+  --bg2:     #13161e;
+  --bg3:     #1a1e28;
+  --border:  rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.13);
+  --text:    #e8eaf0;
+  --muted:   #6b7280;
+  --dim:     #374151;
+  --green:   #10d9a0;
+  --green2:  #065f46;
+  --blue:    #4ea8ff;
+  --blue2:   #1e3a5f;
+  --amber:   #f59e0b;
+  --amber2:  #451a03;
+  --red:     #f87171;
+  --red2:    #450a0a;
+  --mono:    'DM Mono', monospace;
+  --sans:    'Syne', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); min-height: 100vh; }
+
+/* ── Layout ── */
+.shell { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 12px; }
+.logo { font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; }
+.logo span { color: var(--green); }
+.meta { font-family: var(--mono); font-size: 11px; color: var(--muted); text-align: right; line-height: 1.8; }
+
+/* ── Alert bar ── */
+.alert-bar { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.alert-pill { display: flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-family: var(--mono); font-weight: 500; }
+.alert-pill.surge { background: rgba(16,217,160,.12); border: 1px solid rgba(16,217,160,.3); color: var(--green); }
+.alert-pill.exit  { background: rgba(248,113,113,.1);  border: 1px solid rgba(248,113,113,.3); color: var(--red); }
+.dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.dot.green { background: var(--green); }
+.dot.red   { background: var(--red); }
+
+/* ── Summary metrics ── */
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 2rem; }
+.metric { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.metric-label { font-family: var(--mono); font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+.metric-value { font-size: 28px; font-weight: 700; line-height: 1; }
+.metric-value.green { color: var(--green); }
+.metric-value.blue  { color: var(--blue); }
+.metric-value.amber { color: var(--amber); }
+.metric-value.red   { color: var(--red); }
+
+/* ── Controls ── */
+.controls { display: flex; gap: 8px; margin-bottom: 1.25rem; flex-wrap: wrap; align-items: center; }
+.ctrl-group { display: flex; gap: 4px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 3px; }
+.ctrl-btn { padding: 5px 12px; font-size: 12px; font-family: var(--mono); border: none; background: none; color: var(--muted); border-radius: 6px; cursor: pointer; transition: all .15s; white-space: nowrap; }
+.ctrl-btn.active { background: var(--bg3); color: var(--text); }
+.ctrl-label { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-left: 6px; }
+select { background: var(--bg2); border: 1px solid var(--border); color: var(--text); font-family: var(--mono); font-size: 12px; padding: 6px 10px; border-radius: 8px; outline: none; cursor: pointer; }
+
+/* ── Scanner grid ── */
+.section-title { font-family: var(--mono); font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; }
+.scanner-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-bottom: 2rem; }
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 14px; cursor: pointer; transition: border-color .15s, background .15s; }
+.card:hover { border-color: var(--border2); background: var(--bg3); }
+.card.surge { border-color: rgba(16,217,160,.35); }
+.card.watch  { border-color: rgba(78,168,255,.3); }
+.card.exit   { border-color: rgba(248,113,113,.3); }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+.card-name { font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.card-flag { font-size: 14px; }
+.badge { font-family: var(--mono); font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 999px; }
+.badge.surge   { background: rgba(16,217,160,.15);  color: var(--green); }
+.badge.watch   { background: rgba(78,168,255,.12);  color: var(--blue); }
+.badge.exit    { background: rgba(248,113,113,.12); color: var(--red); }
+.badge.neutral { background: var(--bg3); color: var(--muted); }
+.score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.score-track { flex: 1; height: 4px; background: var(--bg3); border-radius: 2px; overflow: hidden; }
+.score-fill { height: 100%; border-radius: 2px; transition: width .4s; }
+.score-num { font-family: var(--mono); font-size: 13px; font-weight: 500; min-width: 30px; text-align: right; }
+.card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.stat { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.stat span { color: var(--text); }
+.stat .pos { color: var(--green); }
+.stat .neg { color: var(--red); }
+.card-etfs { font-family: var(--mono); font-size: 10px; color: var(--dim); margin-top: 8px; }
+
+/* ── Rank chart ── */
+.rank-section { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 2rem; }
+.rank-row { display: flex; align-items: center; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--border); }
+.rank-row:last-child { border-bottom: none; }
+.rank-num { font-family: var(--mono); font-size: 11px; color: var(--muted); min-width: 20px; text-align: right; }
+.rank-name { font-size: 13px; min-width: 130px; display: flex; align-items: center; gap: 6px; }
+.rank-bar-wrap { flex: 1; height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
+.rank-bar { height: 100%; border-radius: 3px; }
+.rank-score { font-family: var(--mono); font-size: 12px; font-weight: 500; min-width: 36px; text-align: right; }
+.rank-badge { font-family: var(--mono); font-size: 10px; min-width: 48px; text-align: center; padding: 1px 6px; border-radius: 4px; }
+
+/* ── Detail drawer ── */
+.drawer { background: var(--bg2); border: 1px solid var(--border2); border-radius: 14px; padding: 18px; margin-bottom: 1.5rem; display: none; }
+.drawer.open { display: block; }
+.drawer-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.drawer-title { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.drawer-close { font-family: var(--mono); font-size: 12px; color: var(--muted); cursor: pointer; padding: 4px 10px; border: 1px solid var(--border); border-radius: 6px; background: none; color: var(--muted); }
+.drawer-close:hover { color: var(--text); }
+.mini-bars { display: flex; align-items: flex-end; gap: 3px; height: 60px; }
+.mini-bar { flex: 1; border-radius: 2px 2px 0 0; min-height: 2px; }
+
+/* ── Loading / error ── */
+#loading { text-align: center; padding: 4rem; font-family: var(--mono); color: var(--muted); }
+.spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid var(--border2); border-top-color: var(--green); border-radius: 50%; animation: spin .8s linear infinite; margin-bottom: 12px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+#error { display: none; background: var(--red2); border: 1px solid var(--red); border-radius: 10px; padding: 14px 16px; font-family: var(--mono); font-size: 13px; color: var(--red); margin-bottom: 1rem; }
+</style>
+</head>
+<body>
+<div class="shell">
+  <header>
+    <div class="logo">Flow<span>Scanner</span></div>
+    <div class="meta" id="metaBar">loading…</div>
+  </header>
+
+  <div id="error"></div>
+  <div id="loading"><div class="spinner"></div><br>กำลังโหลดข้อมูล…</div>
+  <div id="app" style="display:none">
+    <div class="alert-bar" id="alertBar"></div>
+    <div class="metrics" id="metricsRow"></div>
+    <div class="controls">
+      <div class="ctrl-group" id="catBtns">
+        <button class="ctrl-btn active" data-cat="all">All</button>
+        <button class="ctrl-btn" data-cat="country">Country</button>
+        <button class="ctrl-btn" data-cat="sector">Sector</button>
+        <button class="ctrl-btn" data-cat="asset">Asset</button>
+        <button class="ctrl-btn" data-cat="theme">Theme</button>
+      </div>
+      <span class="ctrl-label">Min score:</span>
+      <select id="minScore">
+        <option value="0">All</option>
+        <option value="50">50+</option>
+        <option value="65" selected>65+</option>
+        <option value="75">75+</option>
+      </select>
+      <span class="ctrl-label">Sort:</span>
+      <select id="sortBy">
+        <option value="score">Score</option>
+        <option value="flow">Flow 4W</option>
+        <option value="momentum">Momentum</option>
+      </select>
+    </div>
+    <div class="section-title" id="gridTitle"></div>
+    <div id="drawer" class="drawer"></div>
+    <div class="scanner-grid" id="grid"></div>
+    <div class="rank-section">
+      <div class="section-title" style="margin-bottom:12px">Top 15 — surge score ranking</div>
+      <div id="rankList"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA_URL = "data/latest.json";
+let RAW = null;
+let activeCat = "all";
+
+const scoreColor = s => s >= 65 ? "#10d9a0" : s >= 50 ? "#4ea8ff" : s < 30 ? "#f87171" : "#6b7280";
+const cls = s => s >= 65 ? "surge" : s >= 50 ? "watch" : "neutral";
+const fmtFlow = v => (v >= 0 ? "+" : "") + v.toFixed(2) + "B";
+const fmtPct  = v => (v >= 0 ? "+" : "") + v.toFixed(1) + "%";
+
+async function loadData() {
+  try {
+    const r = await fetch(DATA_URL + "?t=" + Date.now());
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    RAW = await r.json();
+    render();
+  } catch (e) {
+    document.getElementById("loading").style.display = "none";
+    const err = document.getElementById("error");
+    err.style.display = "block";
+    err.textContent = "ไม่พบ data/latest.json — รัน GitHub Actions ก่อน หรือวาง latest.json ใน folder data/ แล้ว refresh";
+  }
+}
+
+function flatMarkets() {
+  const out = [];
+  for (const [cat, markets] of Object.entries(RAW.universe)) {
+    for (const [, m] of Object.entries(markets)) {
+      out.push({ ...m, cat });
+    }
+  }
+  return out;
+}
+
+function render() {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("app").style.display = "block";
+
+  const ts = RAW.generated_at.replace("T", " ").slice(0, 16) + " UTC";
+  document.getElementById("metaBar").innerHTML = `อัปเดต: ${ts}<br>Universe: ${flatMarkets().length} markets`;
+
+  renderAlerts();
+  renderMetrics();
+  renderGrid();
+  renderRank();
+}
+
+function renderAlerts() {
+  const bar = document.getElementById("alertBar");
+  bar.innerHTML = RAW.alerts.map(a => {
+    if (a.type === "new_surge")
+      return `<div class="alert-pill surge"><div class="dot green"></div>NEW SURGE: ${a.market} (${a.score}) · ${a.etf}</div>`;
+    if (a.type === "exit_signal")
+      return `<div class="alert-pill exit"><div class="dot red"></div>EXIT SIGNAL: ${a.market} (${a.score}, ${a.delta > 0 ? "+" : ""}${a.delta})</div>`;
+    return "";
+  }).join("");
+}
+
+function renderMetrics() {
+  const s = RAW.summary;
+  document.getElementById("metricsRow").innerHTML = `
+    <div class="metric"><div class="metric-label">Surge</div><div class="metric-value green">${s.surge}</div></div>
+    <div class="metric"><div class="metric-label">Watch</div><div class="metric-value blue">${s.watch}</div></div>
+    <div class="metric"><div class="metric-label">Exit signal</div><div class="metric-value red">${s.exit}</div></div>
+    <div class="metric"><div class="metric-label">Neutral</div><div class="metric-value" style="color:var(--muted)">${s.neutral}</div></div>`;
+}
+
+function getFiltered() {
+  const min   = parseInt(document.getElementById("minScore").value);
+  const sortK = document.getElementById("sortBy").value;
+  let items = flatMarkets().filter(m => {
+    if (activeCat !== "all" && m.cat !== activeCat) return false;
+    if (m.score < min) return false;
+    return true;
+  });
+  items.sort((a, b) => {
+    if (sortK === "flow")     return b.flow_4w_bn - a.flow_4w_bn;
+    if (sortK === "momentum") return b.score_delta - a.score_delta;
+    return b.score - a.score;
+  });
+  return items;
+}
+
+function renderGrid() {
+  const items = getFiltered();
+  document.getElementById("gridTitle").textContent = `${items.length} markets — คลิกการ์ดเพื่อดู weekly flow series`;
+  document.getElementById("grid").innerHTML = items.map(m => {
+    const c = cls(m.score);
+    const sc = scoreColor(m.score);
+    const dSign = m.score_delta >= 0 ? "+" : "";
+    return `<div class="card ${c}" onclick="openDrawer('${m.name.replace(/'/g,"\\'")}')">
+      <div class="card-header">
+        <div class="card-name"><span class="card-flag">${m.flag || ""}</span>${m.name}</div>
+        <div class="badge ${c}">${c.toUpperCase()}</div>
+      </div>
+      <div class="score-row">
+        <div class="score-track"><div class="score-fill" style="width:${m.score}%;background:${sc}"></div></div>
+        <div class="score-num" style="color:${sc}">${m.score}</div>
+      </div>
+      <div class="card-stats">
+        <div class="stat">4W flow <span class="${m.flow_4w_bn >= 0 ? "pos" : "neg"}">${fmtFlow(m.flow_4w_bn)}</span></div>
+        <div class="stat">1M ret <span class="${m.price_ret_1m >= 0 ? "pos" : "neg"}">${fmtPct(m.price_ret_1m)}</span></div>
+        <div class="stat">1W flow <span class="${m.flow_1w_bn >= 0 ? "pos" : "neg"}">${fmtFlow(m.flow_1w_bn)}</span></div>
+        <div class="stat">Δscore <span class="${m.score_delta >= 0 ? "pos" : "neg"}">${dSign}${m.score_delta}</span></div>
+      </div>
+      <div class="card-etfs">${m.etfs.join(" · ")}</div>
+    </div>`;
+  }).join("");
+}
+
+function openDrawer(name) {
+  const m = flatMarkets().find(x => x.name === name);
+  if (!m) return;
+  const dr = document.getElementById("drawer");
+  const series = m.weekly_series || [];
+  const maxAbs = Math.max(...series.map(Math.abs), 0.01);
+  const bars = series.map(v => {
+    const h = Math.max(Math.round(Math.abs(v) / maxAbs * 56), 2);
+    const col = v >= 0 ? "#10d9a0" : "#f87171";
+    return `<div class="mini-bar" style="height:${h}px;background:${col};opacity:.85"></div>`;
+  }).join("");
+
+  dr.innerHTML = `
+    <div class="drawer-header">
+      <div class="drawer-title">${m.flag || ""} ${m.name}
+        <span class="badge ${cls(m.score)}" style="font-size:11px">${m.score}</span>
+      </div>
+      <button class="drawer-close" onclick="document.getElementById('drawer').classList.remove('open')">close</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px">
+      <div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-bottom:3px">4W NET FLOW</div>
+           <div style="font-size:18px;font-weight:700;color:${m.flow_4w_bn>=0?"var(--green)":"var(--red)"}">${fmtFlow(m.flow_4w_bn)}</div></div>
+      <div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-bottom:3px">1M RETURN</div>
+           <div style="font-size:18px;font-weight:700;color:${m.price_ret_1m>=0?"var(--green)":"var(--red)"}">${fmtPct(m.price_ret_1m)}</div></div>
+      <div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-bottom:3px">ETFs</div>
+           <div style="font-family:var(--mono);font-size:12px;color:var(--text)">${m.etfs.join(", ")}</div></div>
+    </div>
+    <div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-bottom:6px">WEEKLY FLOW (12W)</div>
+    <div class="mini-bars">${bars}</div>`;
+  dr.classList.add("open");
+  dr.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function renderRank() {
+  const top = flatMarkets().sort((a, b) => b.score - a.score).slice(0, 15);
+  document.getElementById("rankList").innerHTML = top.map((m, i) => {
+    const c = cls(m.score);
+    const sc = scoreColor(m.score);
+    const badgeStyle = c === "surge"
+      ? "background:rgba(16,217,160,.12);color:#10d9a0"
+      : c === "watch"
+      ? "background:rgba(78,168,255,.1);color:#4ea8ff"
+      : "background:var(--bg3);color:var(--muted)";
+    return `<div class="rank-row">
+      <div class="rank-num">${i + 1}</div>
+      <div class="rank-name"><span>${m.flag || ""}</span>${m.name}</div>
+      <div class="rank-bar-wrap"><div class="rank-bar" style="width:${m.score}%;background:${sc}"></div></div>
+      <div class="rank-score" style="color:${sc}">${m.score}</div>
+      <div class="rank-badge" style="${badgeStyle}">${c}</div>
+      <div style="font-family:var(--mono);font-size:11px;color:${m.flow_4w_bn>=0?"#10d9a0":"#f87171"};min-width:70px;text-align:right">${fmtFlow(m.flow_4w_bn)}</div>
+    </div>`;
+  }).join("");
+}
+
+// ── Event listeners ─────────────────────────────────────────────────────────
+document.getElementById("catBtns").addEventListener("click", e => {
+  const btn = e.target.closest("[data-cat]");
+  if (!btn) return;
+  activeCat = btn.dataset.cat;
+  document.querySelectorAll(".ctrl-btn").forEach(b => b.classList.toggle("active", b === btn));
+  renderGrid();
+});
+document.getElementById("minScore").addEventListener("change", renderGrid);
+document.getElementById("sortBy").addEventListener("change", renderGrid);
+
+loadData();
+</script>
+</body>
+</html>
