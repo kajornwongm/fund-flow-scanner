@@ -55,32 +55,36 @@ DATA_DIR = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
 
 def estimate_daily_flow(ticker: str, period_days: int = 90) -> dict | None:
-    """ประมาณ net flow จาก ETF โดยใช้ ΔAUM − price effect"""
     try:
         tk = yf.Ticker(ticker)
         end = datetime.today()
         start = end - timedelta(days=period_days + 15)
-        hist = tk.history(start=start.strftime("%Y-%m-%d"),
-                          end=end.strftime("%Y-%m-%d"),
-                          auto_adjust=True)
+        hist = tk.history(
+            start=start.strftime("%Y-%m-%d"),
+            end=end.strftime("%Y-%m-%d"),
+            auto_adjust=True
+        )
         if hist.empty or len(hist) < 5:
             return None
 
-        shares = tk.info.get("sharesOutstanding", None)
-        if not shares or shares < 1000:
-            return None
+        close  = hist["Close"]
+        volume = hist["Volume"]
 
-        close = hist["Close"]
-        price_ret = close.pct_change().fillna(0)
-        aum_b = close * shares / 1e9  # USD billion
+        # Flow proxy = volume × price (สะท้อน dollar flow เข้า/ออก ETF)
+        # ใช้ deviation จาก rolling mean เป็น net flow signal
+        vol_ma   = volume.rolling(20, min_periods=5).mean()
+        vol_dev  = (volume - vol_ma).fillna(0)
+        flow_raw = vol_dev * close / 1e9  # USD billion
 
-        # Flow = ΔAUM − price_return × AUM_prev
-        delta_aum = aum_b.diff().fillna(0)
-        price_effect = price_ret * aum_b.shift(1).fillna(aum_b.iloc[0])
-        flow = delta_aum - price_effect
+        recent  = flow_raw.iloc[-period_days:]
+        weekly  = recent.resample("W").sum()
 
-        recent = flow.iloc[-period_days:]
-        weekly = recent.resample("W").sum()
+        price_ret_1m = float(
+            (close.iloc[-1] / close.iloc[-22] - 1) * 100
+        ) if len(close) >= 22 else 0.0
+
+        shares = tk.info.get("sharesOutstanding", 1)
+        aum_b  = float(close.iloc[-1] * shares / 1e9)
 
         return {
             "total_flow_bn":    round(float(recent.sum()), 2),
@@ -88,8 +92,8 @@ def estimate_daily_flow(ticker: str, period_days: int = 90) -> dict | None:
             "flow_4w_bn":       round(float(recent.iloc[-20:].sum()), 2),
             "weekly_series":    [round(float(v), 2) for v in weekly.tail(12).tolist()],
             "latest_price":     round(float(close.iloc[-1]), 2),
-            "price_ret_1m_pct": round(float((close.iloc[-1]/close.iloc[-21]-1)*100), 1),
-            "current_aum_bn":   round(float(aum_b.iloc[-1]), 1),
+            "price_ret_1m_pct": round(price_ret_1m, 1),
+            "current_aum_bn":   round(aum_b, 1),
         }
     except Exception as e:
         print(f"  warn {ticker}: {e}", file=sys.stderr)
