@@ -105,10 +105,16 @@ def compute_flow_for_window(ticker: str, window_start: str, window_end: str) -> 
     price_ret = close.pct_change().fillna(0)
     aum_b = close * shares / 1e9
 
-    delta_aum = aum_b.diff().fillna(0)
-    price_effect = price_ret * aum_b.shift(1).fillna(aum_b.iloc[0])
-    flow = delta_aum - price_effect
-
+    #ของเดิม
+    #delta_aum = aum_b.diff().fillna(0)
+    #price_effect = price_ret * aum_b.shift(1).fillna(aum_b.iloc[0])
+    #flow = delta_aum - price_effect
+    
+    # Volume-based flow proxy (ของใหม่ที่มาแทน)
+    vol_ma = h["Volume"].rolling(20, min_periods=5).mean()
+    vol_dev = (h["Volume"] - vol_ma).fillna(0)
+    flow = vol_dev * close / 1e9
+    
     total_flow = float(flow.sum())
     price_ret_total = float((close.iloc[-1] / close.iloc[0] - 1) * 100)
 
