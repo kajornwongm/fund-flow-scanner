@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-04-18T14:03:33.850378Z",
+  "universe": {
+    "country": {},
+    "sector": {},
+    "asset": {},
+    "theme": {}
+  },
+  "alerts": [],
+  "summary": {
+    "surge": 0,
+    "watch": 0,
+    "exit": 0,
+    "neutral": 0
+  }
+}
