@@ -282,4 +282,6 @@ if __name__ == "__main__":
         import subprocess, sys
         subprocess.check_call([sys.executable, "-m", "pip", "install", "python-dateutil"])
         from dateutil.relativedelta import relativedelta
+    import sys as _sys
+    _sys.argv = [_sys.argv[0]]
     main()
