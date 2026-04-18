@@ -66,9 +66,8 @@ def estimate_daily_flow(ticker: str, period_days: int = 90) -> dict | None:
         if hist.empty or len(hist) < 5:
             return None
 
-        info = tk.fast_info
-        shares = getattr(info, "shares", None)
-        if not shares:
+        shares = tk.info.get("sharesOutstanding", None)
+        if not shares or shares < 1000:
             return None
 
         close = hist["Close"]
