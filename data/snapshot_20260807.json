@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T01:33:32.155770Z",
+  "generated_at": "2026-08-07T22:53:52.716546Z",
   "universe": {
     "country": {
       "South Korea": {
@@ -11,12 +11,12 @@
           "FLKR"
         ],
         "score": 42.5,
-        "score_prev": 100.0,
-        "score_delta": -57.5,
-        "classification": "exit",
-        "total_flow_bn": 18.86,
-        "flow_1w_bn": -3.42,
-        "flow_4w_bn": 6.83,
+        "score_prev": 42.5,
+        "score_delta": 0.0,
+        "classification": "neutral",
+        "total_flow_bn": 18.89,
+        "flow_1w_bn": -3.39,
+        "flow_4w_bn": 6.86,
         "price_ret_1m": -9.6,
         "weekly_series": [
           -0.67,
@@ -30,7 +30,7 @@
           7.16,
           -4.34,
           9.34,
-          -5.07
+          -5.04
         ]
       },
       "Japan": {
@@ -42,12 +42,12 @@
           "DXJ"
         ],
         "score": 0.0,
-        "score_prev": 70.0,
-        "score_delta": -70.0,
-        "classification": "exit",
-        "total_flow_bn": -1.49,
-        "flow_1w_bn": -0.54,
-        "flow_4w_bn": -1.4,
+        "score_prev": 0.0,
+        "score_delta": 0.0,
+        "classification": "neutral",
+        "total_flow_bn": -1.46,
+        "flow_1w_bn": -0.52,
+        "flow_4w_bn": -1.38,
         "price_ret_1m": 2.4,
         "weekly_series": [
           -0.16,
@@ -61,7 +61,7 @@
           -0.2,
           -0.51,
           0.14,
-          -0.56
+          -0.54
         ]
       },
       "India": {
@@ -73,10 +73,10 @@
           "EPI"
         ],
         "score": 80.0,
-        "score_prev": 100.0,
-        "score_delta": -20.0,
-        "classification": "exit",
-        "total_flow_bn": 0.55,
+        "score_prev": 80.0,
+        "score_delta": 0.0,
+        "classification": "surge",
+        "total_flow_bn": 0.56,
         "flow_1w_bn": -0.21,
         "flow_4w_bn": 0.31,
         "price_ret_1m": 3.0,
@@ -103,12 +103,12 @@
           "EWT"
         ],
         "score": 42.5,
-        "score_prev": 61.2,
-        "score_delta": -18.7,
-        "classification": "exit",
+        "score_prev": 42.5,
+        "score_delta": 0.0,
+        "classification": "neutral",
         "total_flow_bn": 1.21,
-        "flow_1w_bn": -0.41,
-        "flow_4w_bn": 0.14,
+        "flow_1w_bn": -0.4,
+        "flow_4w_bn": 0.15,
         "price_ret_1m": -1.8,
         "weekly_series": [
           1.08,
@@ -122,7 +122,7 @@
           0.65,
           -0.35,
           0.18,
-          -0.59
+          -0.58
         ]
       },
       "Germany": {
@@ -133,12 +133,12 @@
           "EWG"
         ],
         "score": 0.0,
-        "score_prev": 100.0,
-        "score_delta": -100.0,
-        "classification": "exit",
+        "score_prev": 0.0,
+        "score_delta": 0.0,
+        "classification": "neutral",
         "total_flow_bn": -0.24,
         "flow_1w_bn": -0.05,
-        "flow_4w_bn": -0.08,
+        "flow_4w_bn": -0.07,
         "price_ret_1m": 5.3,
         "weekly_series": [
           0.0,
@@ -163,13 +163,13 @@
           "VNM"
         ],
         "score": 80.7,
-        "score_prev": 82.5,
-        "score_delta": -1.8,
-        "classification": "neutral",
+        "score_prev": 80.7,
+        "score_delta": 0.0,
+        "classification": "surge",
         "total_flow_bn": 0.05,
         "flow_1w_bn": 0.02,
         "flow_4w_bn": 0.07,
-        "price_ret_1m": -4.3,
+        "price_ret_1m": -4.2,
         "weekly_series": [
           -0.01,
           -0.02,
@@ -223,9 +223,9 @@
           "KSA"
         ],
         "score": 80.0,
-        "score_prev": 100.0,
-        "score_delta": -20.0,
-        "classification": "exit",
+        "score_prev": 80.0,
+        "score_delta": 0.0,
+        "classification": "surge",
         "total_flow_bn": 0.05,
         "flow_1w_bn": -0.01,
         "flow_4w_bn": 0.07,
@@ -259,9 +259,9 @@
         "score_prev": 32.5,
         "score_delta": 0.0,
         "classification": "neutral",
-        "total_flow_bn": -0.39,
-        "flow_1w_bn": 0.1,
-        "flow_4w_bn": -3.86,
+        "total_flow_bn": -0.34,
+        "flow_1w_bn": 0.15,
+        "flow_4w_bn": -3.8,
         "price_ret_1m": 2.9,
         "weekly_series": [
           2.15,
@@ -275,7 +275,7 @@
           -1.4,
           -3.41,
           2.14,
-          -0.02
+          0.04
         ]
       },
       "Defense": {
@@ -287,8 +287,8 @@
           "ITA"
         ],
         "score": 73.3,
-        "score_prev": 55.3,
-        "score_delta": 18.0,
+        "score_prev": 73.3,
+        "score_delta": 0.0,
         "classification": "surge",
         "total_flow_bn": -0.83,
         "flow_1w_bn": -0.06,
@@ -317,13 +317,13 @@
           "XLE",
           "VDE"
         ],
-        "score": 5.4,
-        "score_prev": 0.0,
-        "score_delta": 5.4,
+        "score": 6.4,
+        "score_prev": 5.4,
+        "score_delta": 1.0,
         "classification": "neutral",
-        "total_flow_bn": -4.28,
-        "flow_1w_bn": -0.35,
-        "flow_4w_bn": -1.83,
+        "total_flow_bn": -4.25,
+        "flow_1w_bn": -0.33,
+        "flow_4w_bn": -1.8,
         "price_ret_1m": 4.6,
         "weekly_series": [
           2.36,
@@ -337,7 +337,7 @@
           -0.1,
           -0.42,
           -0.74,
-          0.07
+          0.1
         ]
       },
       "Nat. Resources": {
@@ -349,11 +349,11 @@
           "GNR"
         ],
         "score": 69.2,
-        "score_prev": 32.5,
-        "score_delta": 36.7,
+        "score_prev": 69.2,
+        "score_delta": 0.0,
         "classification": "surge",
         "total_flow_bn": 0.23,
-        "flow_1w_bn": 0.3,
+        "flow_1w_bn": 0.31,
         "flow_4w_bn": -0.01,
         "price_ret_1m": 8.4,
         "weekly_series": [
@@ -368,7 +368,7 @@
           -0.22,
           -0.08,
           -0.01,
-          0.34
+          0.35
         ]
       },
       "Healthcare": {
@@ -380,12 +380,12 @@
           "VHT"
         ],
         "score": 32.5,
-        "score_prev": 70.0,
-        "score_delta": -37.5,
-        "classification": "exit",
-        "total_flow_bn": 1.93,
-        "flow_1w_bn": 1.86,
-        "flow_4w_bn": -1.84,
+        "score_prev": 32.5,
+        "score_delta": 0.0,
+        "classification": "neutral",
+        "total_flow_bn": 1.96,
+        "flow_1w_bn": 1.89,
+        "flow_4w_bn": -1.81,
         "price_ret_1m": 1.1,
         "weekly_series": [
           -0.64,
@@ -399,7 +399,7 @@
           -0.98,
           -3.36,
           0.85,
-          1.88
+          1.91
         ]
       },
       "Financials": {
@@ -411,12 +411,12 @@
           "VFH"
         ],
         "score": 0.0,
-        "score_prev": 57.4,
-        "score_delta": -57.4,
-        "classification": "exit",
-        "total_flow_bn": 1.96,
-        "flow_1w_bn": -0.75,
-        "flow_4w_bn": -1.08,
+        "score_prev": 0.0,
+        "score_delta": 0.0,
+        "classification": "neutral",
+        "total_flow_bn": 1.99,
+        "flow_1w_bn": -0.73,
+        "flow_4w_bn": -1.06,
         "price_ret_1m": 5.2,
         "weekly_series": [
           0.11,
@@ -430,7 +430,7 @@
           1.38,
           -1.47,
           0.3,
-          -0.67
+          -0.64
         ]
       },
       "Industrials": {
@@ -441,13 +441,13 @@
           "XLI",
           "VIS"
         ],
-        "score": 56.2,
-        "score_prev": 49.4,
-        "score_delta": 6.8,
+        "score": 56.9,
+        "score_prev": 56.2,
+        "score_delta": 0.7,
         "classification": "watch",
-        "total_flow_bn": -2.09,
-        "flow_1w_bn": 0.81,
-        "flow_4w_bn": -0.7,
+        "total_flow_bn": -2.06,
+        "flow_1w_bn": 0.84,
+        "flow_4w_bn": -0.67,
         "price_ret_1m": 2.3,
         "weekly_series": [
           0.33,
@@ -461,7 +461,7 @@
           -0.62,
           -0.92,
           0.57,
-          0.7
+          0.73
         ]
       },
       "Real Estate": {
@@ -476,9 +476,9 @@
         "score_prev": 32.5,
         "score_delta": 0.0,
         "classification": "neutral",
-        "total_flow_bn": 0.06,
-        "flow_1w_bn": 0.5,
-        "flow_4w_bn": -0.85,
+        "total_flow_bn": 0.12,
+        "flow_1w_bn": 0.56,
+        "flow_4w_bn": -0.79,
         "price_ret_1m": 1.4,
         "weekly_series": [
           -0.39,
@@ -492,7 +492,7 @@
           -0.64,
           -0.71,
           0.33,
-          0.38
+          0.44
         ]
       }
     },
@@ -506,13 +506,13 @@
           "IVV",
           "VTI"
         ],
-        "score": 37.7,
-        "score_prev": 32.5,
-        "score_delta": 5.2,
+        "score": 40.4,
+        "score_prev": 37.7,
+        "score_delta": 2.7,
         "classification": "neutral",
-        "total_flow_bn": 48.22,
-        "flow_1w_bn": 17.13,
-        "flow_4w_bn": -51.56,
+        "total_flow_bn": 52.14,
+        "flow_1w_bn": 21.06,
+        "flow_4w_bn": -47.64,
         "price_ret_1m": 3.0,
         "weekly_series": [
           -7.71,
@@ -526,7 +526,7 @@
           -49.13,
           -28.66,
           38.04,
-          5.91
+          9.85
         ]
       },
       "Intl Equity": {
@@ -537,13 +537,13 @@
           "VEA",
           "EFA"
         ],
-        "score": 9.1,
-        "score_prev": 34.9,
-        "score_delta": -25.8,
-        "classification": "exit",
-        "total_flow_bn": -3.42,
-        "flow_1w_bn": -0.85,
-        "flow_4w_bn": -4.95,
+        "score": 17.2,
+        "score_prev": 9.1,
+        "score_delta": 8.1,
+        "classification": "neutral",
+        "total_flow_bn": -3.17,
+        "flow_1w_bn": -0.6,
+        "flow_4w_bn": -4.7,
         "price_ret_1m": 3.2,
         "weekly_series": [
           0.17,
@@ -557,7 +557,7 @@
           -2.32,
           -1.09,
           0.23,
-          -1.17
+          -0.92
         ]
       },
       "EM Equity": {
@@ -569,13 +569,13 @@
           "VWO",
           "IEMG"
         ],
-        "score": 67.8,
-        "score_prev": 90.0,
-        "score_delta": -22.2,
-        "classification": "exit",
-        "total_flow_bn": 3.2,
-        "flow_1w_bn": -0.69,
-        "flow_4w_bn": -4.6,
+        "score": 76.3,
+        "score_prev": 67.8,
+        "score_delta": 8.5,
+        "classification": "surge",
+        "total_flow_bn": 3.48,
+        "flow_1w_bn": -0.42,
+        "flow_4w_bn": -4.32,
         "price_ret_1m": -0.6,
         "weekly_series": [
           2.61,
@@ -589,7 +589,7 @@
           0.33,
           -5.1,
           2.32,
-          -1.43
+          -1.16
         ]
       },
       "Bond": {
@@ -605,9 +605,9 @@
         "score_prev": 70.0,
         "score_delta": 0.0,
         "classification": "surge",
-        "total_flow_bn": 0.54,
-        "flow_1w_bn": 2.49,
-        "flow_4w_bn": -1.79,
+        "total_flow_bn": 0.72,
+        "flow_1w_bn": 2.67,
+        "flow_4w_bn": -1.61,
         "price_ret_1m": -0.3,
         "weekly_series": [
           2.24,
@@ -621,7 +621,7 @@
           -0.98,
           -2.5,
           -0.05,
-          1.91
+          2.09
         ]
       },
       "Gold": {
@@ -633,12 +633,12 @@
           "IAU"
         ],
         "score": 100.0,
-        "score_prev": 87.2,
-        "score_delta": 12.8,
+        "score_prev": 100.0,
+        "score_delta": 0.0,
         "classification": "surge",
-        "total_flow_bn": 4.53,
-        "flow_1w_bn": 4.55,
-        "flow_4w_bn": 1.82,
+        "total_flow_bn": 5.03,
+        "flow_1w_bn": 5.05,
+        "flow_4w_bn": 2.32,
         "price_ret_1m": 4.1,
         "weekly_series": [
           -1.26,
@@ -652,7 +652,7 @@
           -0.51,
           -1.02,
           0.18,
-          4.33
+          4.84
         ]
       },
       "Bitcoin ETF": {
@@ -667,8 +667,8 @@
         "score_prev": 32.5,
         "score_delta": 0.0,
         "classification": "neutral",
-        "total_flow_bn": 1.38,
-        "flow_1w_bn": 0.46,
+        "total_flow_bn": 1.39,
+        "flow_1w_bn": 0.48,
         "flow_4w_bn": -4.47,
         "price_ret_1m": 3.6,
         "weekly_series": [
@@ -683,7 +683,7 @@
           -1.27,
           -2.24,
           0.02,
-          -0.34
+          -0.33
         ]
       },
       "Money Market": {
@@ -695,12 +695,12 @@
           "BIL"
         ],
         "score": 100.0,
-        "score_prev": 32.5,
-        "score_delta": 67.5,
+        "score_prev": 100.0,
+        "score_delta": 0.0,
         "classification": "surge",
-        "total_flow_bn": 1.9,
-        "flow_1w_bn": 2.09,
-        "flow_4w_bn": 0.01,
+        "total_flow_bn": 1.93,
+        "flow_1w_bn": 2.12,
+        "flow_4w_bn": 0.04,
         "price_ret_1m": 0.3,
         "weekly_series": [
           -0.04,
@@ -714,7 +714,7 @@
           -0.46,
           -1.4,
           0.66,
-          1.47
+          1.51
         ]
       }
     },
@@ -729,9 +729,9 @@
           "CHAT"
         ],
         "score": 35.0,
-        "score_prev": 70.0,
-        "score_delta": -35.0,
-        "classification": "exit",
+        "score_prev": 35.0,
+        "score_delta": 0.0,
+        "classification": "neutral",
         "total_flow_bn": 0.18,
         "flow_1w_bn": -0.15,
         "flow_4w_bn": -0.6,
@@ -760,8 +760,8 @@
           "ROBO"
         ],
         "score": 93.3,
-        "score_prev": 68.0,
-        "score_delta": 25.3,
+        "score_prev": 93.3,
+        "score_delta": 0.0,
         "classification": "surge",
         "total_flow_bn": 0.04,
         "flow_1w_bn": 0.02,
@@ -822,11 +822,11 @@
           "CIBR"
         ],
         "score": 32.5,
-        "score_prev": 13.7,
-        "score_delta": 18.8,
+        "score_prev": 32.5,
+        "score_delta": 0.0,
         "classification": "neutral",
-        "total_flow_bn": 0.19,
-        "flow_1w_bn": 0.03,
+        "total_flow_bn": 0.2,
+        "flow_1w_bn": 0.04,
         "flow_4w_bn": -0.23,
         "price_ret_1m": 4.6,
         "weekly_series": [
@@ -853,9 +853,9 @@
           "ARKF"
         ],
         "score": 24.3,
-        "score_prev": 37.0,
-        "score_delta": -12.7,
-        "classification": "exit",
+        "score_prev": 24.3,
+        "score_delta": 0.0,
+        "classification": "neutral",
         "total_flow_bn": -0.01,
         "flow_1w_bn": -0.01,
         "flow_4w_bn": -0.03,
@@ -877,105 +877,11 @@
       }
     }
   },
-  "alerts": [
-    {
-      "type": "exit_signal",
-      "market": "South Korea",
-      "score": 42.5,
-      "delta": -57.5
-    },
-    {
-      "type": "exit_signal",
-      "market": "Japan",
-      "score": 0.0,
-      "delta": -70.0
-    },
-    {
-      "type": "exit_signal",
-      "market": "India",
-      "score": 80.0,
-      "delta": -20.0
-    },
-    {
-      "type": "exit_signal",
-      "market": "Taiwan",
-      "score": 42.5,
-      "delta": -18.7
-    },
-    {
-      "type": "exit_signal",
-      "market": "Germany",
-      "score": 0.0,
-      "delta": -100.0
-    },
-    {
-      "type": "exit_signal",
-      "market": "Saudi Arabia",
-      "score": 80.0,
-      "delta": -20.0
-    },
-    {
-      "type": "new_surge",
-      "market": "Defense",
-      "score": 73.3,
-      "flow_1w": -0.06,
-      "etf": "XAR"
-    },
-    {
-      "type": "new_surge",
-      "market": "Nat. Resources",
-      "score": 69.2,
-      "flow_1w": 0.3,
-      "etf": "XME"
-    },
-    {
-      "type": "exit_signal",
-      "market": "Healthcare",
-      "score": 32.5,
-      "delta": -37.5
-    },
-    {
-      "type": "exit_signal",
-      "market": "Financials",
-      "score": 0.0,
-      "delta": -57.4
-    },
-    {
-      "type": "exit_signal",
-      "market": "Intl Equity",
-      "score": 9.1,
-      "delta": -25.8
-    },
-    {
-      "type": "exit_signal",
-      "market": "EM Equity",
-      "score": 67.8,
-      "delta": -22.2
-    },
-    {
-      "type": "new_surge",
-      "market": "Money Market",
-      "score": 100.0,
-      "flow_1w": 2.09,
-      "etf": "SHV"
-    },
-    {
-      "type": "exit_signal",
-      "market": "AI / Tech",
-      "score": 35.0,
-      "delta": -35.0
-    },
-    {
-      "type": "exit_signal",
-      "market": "Fintech",
-      "score": 24.3,
-      "delta": -12.7
-    }
-  ],
+  "alerts": [],
   "summary": {
-    "surge": 8,
+    "surge": 12,
     "watch": 1,
-    "exit": 12,
-    "neutral": 7
+    "exit": 0,
+    "neutral": 15
   }
 }
