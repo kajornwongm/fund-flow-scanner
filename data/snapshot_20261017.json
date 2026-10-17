@@ -1,0 +1,887 @@
+{
+  "generated_at": "2026-10-17T00:26:20.377659Z",
+  "universe": {
+    "country": {
+      "South Korea": {
+        "name": "South Korea",
+        "category": "country",
+        "flag": "\ud83c\uddf0\ud83c\uddf7",
+        "etfs": [
+          "EWY",
+          "FLKR"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -13.27,
+        "flow_1w_bn": 5.91,
+        "flow_4w_bn": 5.74,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          9.47,
+          -6.94,
+          -7.83,
+          -3.52,
+          -7.15,
+          -2.34,
+          -0.64,
+          -0.6,
+          1.45,
+          -0.1,
+          -1.52,
+          5.91
+        ]
+      },
+      "Japan": {
+        "name": "Japan",
+        "category": "country",
+        "flag": "\ud83c\uddef\ud83c\uddf5",
+        "etfs": [
+          "EWJ",
+          "DXJ"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -1.08,
+        "flow_1w_bn": -0.32,
+        "flow_4w_bn": 0.36,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.25,
+          -0.54,
+          -1.09,
+          0.02,
+          0.1,
+          0.58,
+          -0.05,
+          -0.44,
+          0.09,
+          0.76,
+          -0.17,
+          -0.32
+        ]
+      },
+      "India": {
+        "name": "India",
+        "category": "country",
+        "flag": "\ud83c\uddee\ud83c\uddf3",
+        "etfs": [
+          "INDA",
+          "EPI"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 0.27,
+        "flow_1w_bn": 0.67,
+        "flow_4w_bn": 0.33,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.4,
+          -0.23,
+          -0.79,
+          -0.56,
+          0.08,
+          0.21,
+          0.23,
+          0.46,
+          -0.24,
+          -0.07,
+          -0.03,
+          0.67
+        ]
+      },
+      "Taiwan": {
+        "name": "Taiwan",
+        "category": "country",
+        "flag": "\ud83c\uddf9\ud83c\uddfc",
+        "etfs": [
+          "EWT"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -1.36,
+        "flow_1w_bn": 0.63,
+        "flow_4w_bn": 1.9,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.12,
+          -1.01,
+          -1.13,
+          -0.72,
+          -0.17,
+          0.05,
+          -0.16,
+          -0.29,
+          1.3,
+          -0.16,
+          0.13,
+          0.63
+        ]
+      },
+      "Germany": {
+        "name": "Germany",
+        "category": "country",
+        "flag": "\ud83c\udde9\ud83c\uddea",
+        "etfs": [
+          "EWG"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -0.15,
+        "flow_1w_bn": -0.07,
+        "flow_4w_bn": -0.02,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.1,
+          -0.05,
+          -0.12,
+          -0.09,
+          0.09,
+          0.06,
+          -0.03,
+          0.09,
+          0.01,
+          -0.03,
+          0.08,
+          -0.07
+        ]
+      },
+      "Vietnam": {
+        "name": "Vietnam",
+        "category": "country",
+        "flag": "\ud83c\uddfb\ud83c\uddf3",
+        "etfs": [
+          "VNM"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -0.02,
+        "flow_1w_bn": 0.0,
+        "flow_4w_bn": -0.05,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.02,
+          0.02,
+          -0.03,
+          -0.03,
+          -0.01,
+          0.02,
+          0.02,
+          0.0,
+          -0.03,
+          -0.01,
+          -0.02,
+          0.0
+        ]
+      },
+      "Brazil": {
+        "name": "Brazil",
+        "category": "country",
+        "flag": "\ud83c\udde7\ud83c\uddf7",
+        "etfs": [
+          "EWZ"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 13.5,
+        "flow_1w_bn": 0.15,
+        "flow_4w_bn": 11.07,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.05,
+          0.21,
+          1.1,
+          0.06,
+          0.42,
+          1.0,
+          0.33,
+          -1.01,
+          0.09,
+          1.75,
+          9.09,
+          0.15
+        ]
+      },
+      "Saudi Arabia": {
+        "name": "Saudi Arabia",
+        "category": "country",
+        "flag": "\ud83c\uddf8\ud83c\udde6",
+        "etfs": [
+          "KSA"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 0.04,
+        "flow_1w_bn": 0.0,
+        "flow_4w_bn": 0.0,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.05,
+          -0.03,
+          -0.02,
+          -0.04,
+          -0.02,
+          0.05,
+          -0.01,
+          0.01,
+          -0.03,
+          0.02,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "sector": {
+      "Technology": {
+        "name": "Technology",
+        "category": "sector",
+        "flag": "\ud83d\udcbb",
+        "etfs": [
+          "XLK",
+          "VGT"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -1.57,
+        "flow_1w_bn": 1.71,
+        "flow_4w_bn": 4.6,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          2.42,
+          -0.61,
+          -3.56,
+          -0.98,
+          -1.37,
+          -0.71,
+          0.35,
+          0.65,
+          1.4,
+          2.0,
+          -0.5,
+          1.71
+        ]
+      },
+      "Defense": {
+        "name": "Defense",
+        "category": "sector",
+        "flag": "\ud83d\udee1",
+        "etfs": [
+          "XAR",
+          "ITA"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 0.4,
+        "flow_1w_bn": -0.11,
+        "flow_4w_bn": -0.29,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.22,
+          -0.06,
+          -0.31,
+          -0.11,
+          0.04,
+          0.17,
+          0.07,
+          0.7,
+          -0.01,
+          -0.05,
+          -0.1,
+          -0.11
+        ]
+      },
+      "Energy": {
+        "name": "Energy",
+        "category": "sector",
+        "flag": "\u26a1",
+        "etfs": [
+          "XLE",
+          "VDE"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -0.23,
+        "flow_1w_bn": -2.01,
+        "flow_4w_bn": -1.5,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          -0.69,
+          -0.44,
+          -1.29,
+          -0.47,
+          -0.4,
+          0.69,
+          1.16,
+          3.21,
+          1.83,
+          -0.49,
+          -0.82,
+          -2.01
+        ]
+      },
+      "Nat. Resources": {
+        "name": "Nat. Resources",
+        "category": "sector",
+        "flag": "\u26cf",
+        "etfs": [
+          "XME",
+          "GNR"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -0.52,
+        "flow_1w_bn": 0.27,
+        "flow_4w_bn": -0.16,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.04,
+          0.48,
+          -0.35,
+          0.32,
+          -0.21,
+          -0.43,
+          -0.05,
+          0.11,
+          -0.17,
+          -0.01,
+          -0.26,
+          0.27
+        ]
+      },
+      "Healthcare": {
+        "name": "Healthcare",
+        "category": "sector",
+        "flag": "\ud83c\udfe5",
+        "etfs": [
+          "XLV",
+          "VHT"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -3.05,
+        "flow_1w_bn": 0.93,
+        "flow_4w_bn": 1.98,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          1.13,
+          1.56,
+          -2.46,
+          0.79,
+          -2.86,
+          -0.68,
+          0.45,
+          0.44,
+          -0.07,
+          0.8,
+          0.32,
+          0.93
+        ]
+      },
+      "Financials": {
+        "name": "Financials",
+        "category": "sector",
+        "flag": "\ud83c\udfe6",
+        "etfs": [
+          "XLF",
+          "VFH"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 2.95,
+        "flow_1w_bn": -0.2,
+        "flow_4w_bn": 2.84,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.55,
+          -1.38,
+          -2.31,
+          1.0,
+          -0.94,
+          0.59,
+          0.54,
+          2.04,
+          2.17,
+          2.17,
+          -1.29,
+          -0.2
+        ]
+      },
+      "Industrials": {
+        "name": "Industrials",
+        "category": "sector",
+        "flag": "\ud83c\udfed",
+        "etfs": [
+          "XLI",
+          "VIS"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 1.12,
+        "flow_1w_bn": -0.02,
+        "flow_4w_bn": -0.73,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.65,
+          0.6,
+          -2.13,
+          -0.11,
+          0.57,
+          1.89,
+          -0.06,
+          0.88,
+          0.22,
+          -0.11,
+          -0.82,
+          -0.02
+        ]
+      },
+      "Real Estate": {
+        "name": "Real Estate",
+        "category": "sector",
+        "flag": "\ud83c\udfe2",
+        "etfs": [
+          "XLRE",
+          "VNQ"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 2.43,
+        "flow_1w_bn": 0.04,
+        "flow_4w_bn": 2.12,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.46,
+          0.39,
+          -0.07,
+          -0.21,
+          -0.75,
+          0.52,
+          0.41,
+          0.36,
+          0.63,
+          0.97,
+          0.48,
+          0.04
+        ]
+      }
+    },
+    "asset": {
+      "US Equity": {
+        "name": "US Equity",
+        "category": "asset",
+        "flag": "\ud83d\udcc8",
+        "etfs": [
+          "SPY",
+          "IVV",
+          "VTI"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -40.27,
+        "flow_1w_bn": -31.52,
+        "flow_4w_bn": -83.64,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          42.43,
+          4.44,
+          -54.09,
+          -17.69,
+          -38.39,
+          13.88,
+          31.14,
+          56.61,
+          9.91,
+          -5.09,
+          -56.94,
+          -31.52
+        ]
+      },
+      "Intl Equity": {
+        "name": "Intl Equity",
+        "category": "asset",
+        "flag": "\ud83c\udf0d",
+        "etfs": [
+          "VEA",
+          "EFA"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 2.23,
+        "flow_1w_bn": -2.22,
+        "flow_4w_bn": 3.67,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.58,
+          -1.19,
+          -1.84,
+          1.02,
+          -1.5,
+          -0.12,
+          1.48,
+          1.04,
+          1.12,
+          4.94,
+          -0.18,
+          -2.22
+        ]
+      },
+      "EM Equity": {
+        "name": "EM Equity",
+        "category": "asset",
+        "flag": "\ud83c\udf0f",
+        "etfs": [
+          "EEM",
+          "VWO",
+          "IEMG"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -3.73,
+        "flow_1w_bn": -0.97,
+        "flow_4w_bn": 3.81,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          3.03,
+          -1.6,
+          -3.9,
+          -1.66,
+          -3.34,
+          -0.11,
+          1.23,
+          0.73,
+          6.38,
+          0.26,
+          -1.86,
+          -0.97
+        ]
+      },
+      "Bond": {
+        "name": "Bond",
+        "category": "asset",
+        "flag": "\ud83d\udcc4",
+        "etfs": [
+          "AGG",
+          "BND",
+          "IEF"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 13.97,
+        "flow_1w_bn": -0.26,
+        "flow_4w_bn": 9.67,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.43,
+          6.41,
+          -0.34,
+          -2.2,
+          -1.65,
+          0.08,
+          1.21,
+          2.05,
+          3.37,
+          5.71,
+          0.87,
+          -0.26
+        ]
+      },
+      "Gold": {
+        "name": "Gold",
+        "category": "asset",
+        "flag": "\ud83e\udd47",
+        "etfs": [
+          "GLD",
+          "IAU"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 7.02,
+        "flow_1w_bn": -0.68,
+        "flow_4w_bn": -11.26,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.42,
+          7.39,
+          1.36,
+          9.7,
+          7.78,
+          -1.3,
+          -3.97,
+          -5.16,
+          -7.14,
+          -0.66,
+          -2.78,
+          -0.68
+        ]
+      },
+      "Bitcoin ETF": {
+        "name": "Bitcoin ETF",
+        "category": "asset",
+        "flag": "\u20bf",
+        "etfs": [
+          "IBIT",
+          "FBTC"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -1.56,
+        "flow_1w_bn": -2.08,
+        "flow_4w_bn": -8.11,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.35,
+          -0.45,
+          -1.29,
+          10.86,
+          3.63,
+          -1.21,
+          -4.03,
+          -0.84,
+          -0.86,
+          -3.23,
+          -1.94,
+          -2.08
+        ]
+      },
+      "Money Market": {
+        "name": "Money Market",
+        "category": "asset",
+        "flag": "\ud83d\udcb5",
+        "etfs": [
+          "SHV",
+          "BIL"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 3.59,
+        "flow_1w_bn": -1.25,
+        "flow_4w_bn": 2.22,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.95,
+          1.46,
+          -1.33,
+          -0.98,
+          -0.97,
+          1.97,
+          0.33,
+          0.52,
+          0.03,
+          5.86,
+          -2.41,
+          -1.25
+        ]
+      }
+    },
+    "theme": {
+      "AI / Tech": {
+        "name": "AI / Tech",
+        "category": "theme",
+        "flag": "\ud83e\udd16",
+        "etfs": [
+          "BOTZ",
+          "AIQ",
+          "CHAT"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -1.05,
+        "flow_1w_bn": 0.05,
+        "flow_4w_bn": 0.07,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.41,
+          -0.27,
+          -0.49,
+          -0.27,
+          -0.04,
+          -0.12,
+          -0.05,
+          -0.03,
+          -0.01,
+          0.07,
+          -0.04,
+          0.05
+        ]
+      },
+      "Robotics": {
+        "name": "Robotics",
+        "category": "theme",
+        "flag": "\ud83e\uddbe",
+        "etfs": [
+          "BOTT",
+          "ROBO"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -0.06,
+        "flow_1w_bn": 0.0,
+        "flow_4w_bn": -0.03,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          -0.02,
+          0.02,
+          -0.01,
+          0.04,
+          0.02,
+          -0.03,
+          -0.03,
+          0.01,
+          -0.01,
+          -0.02,
+          0.0,
+          0.0
+        ]
+      },
+      "Clean Energy": {
+        "name": "Clean Energy",
+        "category": "theme",
+        "flag": "\ud83c\udf31",
+        "etfs": [
+          "ICLN",
+          "QCLN"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 0.22,
+        "flow_1w_bn": -0.05,
+        "flow_4w_bn": -0.22,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.29,
+          0.35,
+          -0.09,
+          -0.15,
+          -0.1,
+          0.12,
+          0.17,
+          -0.19,
+          -0.09,
+          -0.02,
+          -0.06,
+          -0.05
+        ]
+      },
+      "Cybersecurity": {
+        "name": "Cybersecurity",
+        "category": "theme",
+        "flag": "\ud83d\udd10",
+        "etfs": [
+          "HACK",
+          "CIBR"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": 0.51,
+        "flow_1w_bn": 0.18,
+        "flow_4w_bn": 0.41,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          -0.2,
+          0.04,
+          0.15,
+          0.2,
+          0.0,
+          0.04,
+          -0.24,
+          0.34,
+          0.0,
+          0.12,
+          0.1,
+          0.18
+        ]
+      },
+      "Fintech": {
+        "name": "Fintech",
+        "category": "theme",
+        "flag": "\ud83d\udcb3",
+        "etfs": [
+          "FINX",
+          "ARKF"
+        ],
+        "score": NaN,
+        "score_prev": NaN,
+        "score_delta": NaN,
+        "classification": "neutral",
+        "total_flow_bn": -0.02,
+        "flow_1w_bn": 0.0,
+        "flow_4w_bn": -0.01,
+        "price_ret_1m": NaN,
+        "weekly_series": [
+          0.0,
+          0.0,
+          -0.01,
+          0.0,
+          0.01,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "alerts": [],
+  "summary": {
+    "surge": 0,
+    "watch": 0,
+    "exit": 0,
+    "neutral": 28
+  }
+}
